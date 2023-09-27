@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-server-default-headers-jvm:2.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-default-headers-jvm/2.3.4/478bf1e00ed69b3a90094c281750a5d47dac4673/ktor-server-default-headers-jvm-2.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-default-headers-jvm/2.3.4/5bb7efaf169b32131475f8a11cec9a2a1c1cc573/ktor-server-default-headers-jvm-2.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
