@@ -46,6 +46,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-status-pages-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-default-headers-jvm:2.3.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ktor:ktor-server-metrics-micrometer-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.insert-koin:koin-ktor:3.5.0" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-netty-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-core-jvm:2.3.4" level="project" />
@@ -53,10 +54,12 @@
     <orderEntry type="library" name="Gradle: io.github.oshai:kotlin-logging-jvm:5.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kafka:kafka-streams:3.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-registry-prometheus:1.10.5" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.36" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10" level="project" />
+    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-core:1.11.2" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-content-negotiation-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.92.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.alpn:alpn-api:1.1.3.v20160715" level="project" />
@@ -71,7 +74,10 @@
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.4.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kafka:kafka-clients:3.4.0" level="project" />
     <orderEntry type="library" name="Gradle: org.rocksdb:rocksdbjni:7.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.prometheus:simpleclient_common:0.16.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-observation:1.11.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-commons:1.11.2" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-server-host-common-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.92.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.92.Final" level="project" />
@@ -87,16 +93,22 @@
     <orderEntry type="library" name="Gradle: io.ktor:ktor-http-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-utils-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:23.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.prometheus:simpleclient:0.16.0" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.92.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-serialization-kotlinx-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.prometheus:simpleclient_tracer_otel:0.16.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.prometheus:simpleclient_tracer_otel_agent:0.16.0" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-websockets-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-http-cio-jvm:2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-io-jvm:2.3.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.prometheus:simpleclient_tracer_common:0.16.0" level="project" />
     <orderEntry type="library" name="Gradle: io.ktor:ktor-network-jvm:2.3.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.fusesource.jansi:jansi:2.4.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.13.4.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.13.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.latencyutils:LatencyUtils:2.0.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: com.github.luben:zstd-jni:1.5.2-1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.lz4:lz4-java:1.8.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.xerial.snappy:snappy-java:1.1.8.4" level="project" />

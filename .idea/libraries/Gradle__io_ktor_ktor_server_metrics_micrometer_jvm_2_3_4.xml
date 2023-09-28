@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-server-metrics-micrometer-jvm:2.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-metrics-micrometer-jvm/2.3.4/3d41a4efdfaaf78b756f7bce3d3abaf5100e0590/ktor-server-metrics-micrometer-jvm-2.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-metrics-micrometer-jvm/2.3.4/22469053d5aa842d2c502760b78ed98e0c3ab24b/ktor-server-metrics-micrometer-jvm-2.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

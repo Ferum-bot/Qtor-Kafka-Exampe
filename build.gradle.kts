@@ -41,6 +41,7 @@ dependencies {
     implementation("io.ktor:ktor-server-default-headers-jvm:$ktorServerVersion")
     implementation("io.ktor:ktor-server-content-negotiation:$ktorServerVersion")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorServerVersion")
+    implementation("io.ktor:ktor-server-metrics-micrometer-jvm:$ktorServerVersion")
 
     implementation("org.apache.kafka:kafka-streams:$kafkaVersion")
     testImplementation("org.apache.kafka:kafka-streams-test-utils:$kafkaVersion")
@@ -50,4 +51,5 @@ dependencies {
     implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
 
     implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.10.5")
 }
