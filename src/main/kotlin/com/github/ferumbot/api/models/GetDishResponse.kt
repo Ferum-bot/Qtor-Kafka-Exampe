@@ -1,11 +1,12 @@
 package com.github.ferumbot.api.models
 
+import com.github.ferumbot.model.Dish
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class StartCookingDishResponse(
+data class GetDishResponse(
 
-    @SerialName("dish_identifier")
-    val dishIdentifier: Long
+    @SerialName("dish")
+    val dish: Dish? = null
 )

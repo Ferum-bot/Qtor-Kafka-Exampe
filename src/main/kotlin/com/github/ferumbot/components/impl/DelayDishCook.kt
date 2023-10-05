@@ -29,13 +29,13 @@ class DelayDishCook : DishCook {
 
         return dish.copy(
             status = dish.status.next(),
-            updatedAt = Clock.System.now(),
+            modifiedAt = Clock.System.now(),
         )
     }
 
     private fun getRandomCookTime(): Long {
         val availableCookTime = listOf(
-            25L, 200L, 350L, 750L, 1000L, 2000L, 6000L
+            250L, 2000L, 3500L, 7500L, 10000L, 20000L, 60000L
         )
         val index = (0..availableCookTime.lastIndex).random()
         return availableCookTime[index]

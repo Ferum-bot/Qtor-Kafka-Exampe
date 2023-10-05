@@ -4,8 +4,11 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class StartCookingDishResponse(
+data class GetDishesRequest(
 
-    @SerialName("dish_identifier")
-    val dishIdentifier: Long
+    @SerialName("page_number")
+    val pageNumber: Int,
+
+    @SerialName("page_size")
+    val pageSize: Int,
 )

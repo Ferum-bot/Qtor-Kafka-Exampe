@@ -1,5 +1,6 @@
 package com.github.ferumbot
 
+import com.github.ferumbot.api.withKitchenApi
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.*
 import io.ktor.server.application.Application
@@ -9,6 +10,9 @@ import io.ktor.server.metrics.micrometer.MicrometerMetrics
 import io.ktor.server.netty.Netty
 import io.ktor.server.netty.NettyApplicationEngine
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.server.response.respond
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
 import io.micrometer.core.instrument.binder.jvm.JvmGcMetrics
 import io.micrometer.core.instrument.binder.jvm.JvmMemoryMetrics
 import io.micrometer.core.instrument.binder.jvm.JvmThreadMetrics
@@ -33,17 +37,24 @@ fun main(args: Array<String>) {
 
 private fun Application.kitchenModule() {
     install(MicrometerMetrics) {
-        registry = PrometheusMeterRegistry(PrometheusConfig.DEFAULT)
+        val prometheusRegistry = PrometheusMeterRegistry(PrometheusConfig.DEFAULT)
+        registry = prometheusRegistry
         meterBinders = listOf(
             JvmThreadMetrics(),
             JvmMemoryMetrics(),
             JvmGcMetrics(),
             ProcessorMetrics()
         )
+        this@kitchenModule.routing {
+            get("/metrics"){
+                call.respond(prometheusRegistry.scrape())
+            }
+        }
     }
     install(Koin) {
         slf4jLogger(level = Level.INFO)
-        modules(koinModule)
+        modules(kitchenModule, kafkaModule)
+        createEagerInstances()
     }
     install(ContentNegotiation) {
         json(Json {
@@ -52,6 +63,8 @@ private fun Application.kitchenModule() {
             isLenient = true
         })
     }
+
+    withKitchenApi()
 }
 
 private fun NettyApplicationEngine.Configuration.configureServer() {
