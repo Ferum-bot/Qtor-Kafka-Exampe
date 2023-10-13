@@ -1,8 +1,13 @@
 package com.github.ferumbot
 
 import com.github.ferumbot.api.withKitchenApi
+import com.github.ferumbot.services.CookExecutorService
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
+import io.ktor.server.application.ApplicationStarted
+import io.ktor.server.application.ApplicationStopped
+import io.ktor.server.application.ServerReady
 import io.ktor.server.application.call
 import io.ktor.server.application.install
 import io.ktor.server.engine.embeddedServer
@@ -23,8 +28,11 @@ import io.netty.util.internal.logging.InternalLoggerFactory
 import io.netty.util.internal.logging.Slf4JLoggerFactory
 import kotlinx.serialization.json.Json
 import org.koin.core.logger.Level
+import org.koin.ktor.ext.inject
 import org.koin.ktor.plugin.Koin
 import org.koin.logger.slf4jLogger
+
+private val logger = KotlinLogging.logger {  }
 
 fun main(args: Array<String>) {
 
@@ -69,6 +77,8 @@ private fun Application.kitchenModule() {
     }
 
     withKitchenApi()
+
+    addConsumerExecutorServiceStarting()
 }
 
 private fun NettyApplicationEngine.Configuration.configureServer() {
@@ -81,4 +91,16 @@ private fun NettyApplicationEngine.Configuration.configureServer() {
     callGroupSize = 10
     connectionGroupSize = 10
     workerGroupSize = 10
+}
+
+private fun Application.addConsumerExecutorServiceStarting() {
+    val executor by inject<CookExecutorService>()
+    environment.monitor.subscribe(ServerReady) {
+        executor.startExecution()
+        logger.info { "Cock executor started" }
+    }
+    environment.monitor.unsubscribe(ApplicationStopped) {
+        executor.terminateExecution()
+        logger.info { "Cook executor stopped" }
+    }
 }
