@@ -29,6 +29,7 @@ dependencies {
     val ktorServerVersion = "2.3.4"
     val kafkaVersion = "3.4.0"
     val koinVersion = "3.5.0"
+    val log4jVersion = "2.20.0"
 
     testImplementation(kotlin("test"))
 
@@ -52,4 +53,9 @@ dependencies {
 
     implementation("io.github.oshai:kotlin-logging-jvm:5.1.0")
     implementation("io.micrometer:micrometer-registry-prometheus:1.10.5")
+
+
+    implementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
+    implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
+    implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
 }

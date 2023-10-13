@@ -58,6 +58,9 @@
     <orderEntry type="library" name="Gradle: org.apache.kafka:kafka-streams-test-utils:3.4.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.kafka:kafka-streams:3.4.0" level="project" />
     <orderEntry type="library" name="Gradle: io.micrometer:micrometer-registry-prometheus:1.10.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-core:2.20.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.20.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.20.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-test:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1" level="project" />
